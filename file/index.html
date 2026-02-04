@@ -4,8 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klef Agency - Header</title>
+    <title>Klef Agency - Cotizaciones</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "vbyv8w37of");
+    </script>
     <style>
         * {
             margin: 0;
@@ -145,6 +152,221 @@
             border-top-color: white;
         }
 
+        /* Cotizaciones Content Styles */
+        .cotizacion-content {
+            background-color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .quote-meta {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .quote-folio {
+            background-color: #6b6b6b;
+            color: white;
+            padding: 8px 16px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .quote-tipo {
+            background-color: #9b9b9b;
+            color: white;
+            padding: 8px 16px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .quote-estado {
+            padding: 8px 16px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .quote-estado.pendiente {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .quote-estado.enviada {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .quote-estado.aceptada {
+            background-color: #c3e6cb;
+            color: #155724;
+        }
+
+        .quote-estado.rechazada {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .quote-date {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .quote-client {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .quote-client h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .quote-client p {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .quote-client a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .quote-client a:hover {
+            text-decoration: underline;
+        }
+
+        /* Markdown Content Styles */
+        .quote-content {
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .quote-content h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .quote-content h2 {
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .quote-content h3 {
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .quote-content p {
+            margin-bottom: 15px;
+        }
+
+        .quote-content ul,
+        .quote-content ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        .quote-content li {
+            margin-bottom: 8px;
+        }
+
+        .quote-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .quote-content th,
+        .quote-content td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #e0e0e0;
+        }
+
+        .quote-content th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .quote-content tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .quote-content strong {
+            font-weight: 600;
+        }
+
+        .quote-content code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        .quote-footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Help and Error Messages */
+        .help-message,
+        .error-message {
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .help-message h2,
+        .error-message h2 {
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .help-message p,
+        .error-message p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .help-message code,
+        .error-message code {
+            background-color: #f4f4f4;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .error-message {
+            border-left: 4px solid #dc3545;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .header {
@@ -167,6 +389,20 @@
                 flex: 1;
                 padding: 15px 20px;
             }
+
+            .cotizacion-content {
+                padding: 20px;
+            }
+
+            .quote-header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            .quote-meta {
+                flex-wrap: wrap;
+            }
         }
     </style>
 </head>
@@ -184,8 +420,8 @@
                     <div class="logo-text">Klef Agency</div>
                 </div>
                 <div class="client-info">
-                    <h2><!-- Client Name --></h2>
-                    <p><!-- Client Type --></p>
+                    <h2 id="client-name"><!-- Client Name --></h2>
+                    <p id="client-contact"><!-- Client Contact --></p>
                 </div>
             </div>
 
@@ -197,7 +433,7 @@
                         <i class="fa-solid fa-barcode"></i>
                     </div>
                     <div class="info-label">Folio</div>
-                    <div class="info-value"><!-- Folio --></div>
+                    <div class="info-value" id="quote-folio-display"><!-- Folio --></div>
                 </div>
                 <div class="info-column fecha">
                     <div class="tab-indicator"></div>
@@ -205,11 +441,25 @@
                         <i class="fa-solid fa-calendar-days"></i>
                     </div>
                     <div class="info-label">Fecha</div>
-                    <div class="info-value"><!-- Date --></div>
+                    <div class="info-value" id="quote-date-display"><!-- Date --></div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Contenido de Cotización -->
+    <div id="cotizacion-content" class="cotizacion-content">
+        <p>Cargando cotización...</p>
+    </div>
+
+    <!-- Script de marked.js y app principal -->
+    <script type="module">
+        import { marked } from "https://cdn.jsdelivr.net/npm/marked/+esm";
+
+        // Make marked available globally for the app.js module
+        window.marked = marked;
+    </script>
+    <script type="module" src="../js/app.js"></script>
 </body>
 
 </html>

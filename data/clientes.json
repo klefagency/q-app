@@ -1,0 +1,56 @@
+{
+    "clientes": [
+        {
+            "id": "1",
+            "slug-id": "cumbretezal",
+            "nombre": "Cumbre del Tezal",
+            "contactos": [
+                {
+                    "nombre": "Carlos González",
+                    "email": "carlos@cumbretezal.com",
+                    "telefono": "+52 624 123 4567",
+                    "is-main": true
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "slug-id": "grupo-publicitario",
+            "nombre": "Grupo Publicitario",
+            "contactos": [
+                {
+                    "nombre": "María López",
+                    "email": "maria@grupopublicitario.com",
+                    "telefono": "+52 55 9876 5432",
+                    "is-main": true
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "slug-id": "hana-tao",
+            "nombre": "Hana Tao",
+            "contactos": [
+                {
+                    "nombre": "Roberto Kim",
+                    "email": "roberto@hanatao.com",
+                    "telefono": "+52 624 987 6543",
+                    "is-main": true
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "slug-id": "lome-beauty",
+            "nombre": "Lome Beauty",
+            "contactos": [
+                {
+                    "nombre": "Ana Martínez",
+                    "email": "ana@lomebeauty.com",
+                    "telefono": "+52 55 1234 5678",
+                    "is-main": true
+                }
+            ]
+        }
+    ]
+}
