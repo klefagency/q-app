@@ -46,8 +46,8 @@ async function init() {
 async function loadCotizacion(quoteId) {
     // Load data files in parallel
     const [cotizacionesData, clientesData] = await Promise.all([
-        fetch('./data/cotizaciones.json').then(res => res.json()),
-        fetch('./data/clientes.json').then(res => res.json())
+        fetch('../data/cotizaciones.json').then(res => res.json()),
+        fetch('../data/clientes.json').then(res => res.json())
     ]);
 
     // Find the quote

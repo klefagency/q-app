@@ -9,7 +9,7 @@
             "tipo": "studio",
             "folio": "S-001",
             "fecha": "2026-02-03",
-            "url_md": "/cotizaciones/s001.md",
+            "url_md": "../cotizaciones/s001.md",
             "estado": "pendiente"
         },
         {
@@ -21,7 +21,7 @@
             "tipo": "devs",
             "folio": "D-001",
             "fecha": "2026-02-05",
-            "url_md": "/cotizaciones/d001.md",
+            "url_md": "../cotizaciones/d001.md",
             "estado": "enviada"
         },
         {
@@ -33,7 +33,7 @@
             "tipo": "marketing",
             "folio": "M-001",
             "fecha": "2026-02-10",
-            "url_md": "/cotizaciones/m001.md",
+            "url_md": "../cotizaciones/m001.md",
             "estado": "pendiente"
         },
         {
@@ -45,7 +45,7 @@
             "tipo": "branding",
             "folio": "B-001",
             "fecha": "2026-02-15",
-            "url_md": "/cotizaciones/b001.md",
+            "url_md": "../cotizaciones/b001.md",
             "estado": "pendiente"
         }
     ]
