@@ -51,3 +51,21 @@ export function hasQueryParam(paramName) {
 export function getBaseUrl() {
     return window.location.protocol + '//' + window.location.host + window.location.pathname;
 }
+
+/**
+ * Get the view parameter (?view=)
+ * @returns {string|null} The view type ('clientes', 'cliente') or null
+ */
+export function getViewParam() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('view');
+}
+
+/**
+ * Get the slug parameter (?slug=)
+ * @returns {string|null} The slug value or null
+ */
+export function getSlugParam() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('slug');
+}

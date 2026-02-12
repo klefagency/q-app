@@ -13,6 +13,30 @@
             "estado": "pendiente"
         },
         {
+            "id": "s002",
+            "cliente": {
+                "client_slug": "cumbretezal",
+                "client_contact": "ruben-flores"
+            },
+            "tipo": "studio",
+            "folio": "S-002",
+            "fecha": "2026-02-12",
+            "url_md": "../cotizaciones/s002.md",
+            "estado": "pendiente"
+        },
+        {
+            "id": "s003",
+            "cliente": {
+                "client_slug": "cumbretezal",
+                "client_contact": "main"
+            },
+            "tipo": "studio",
+            "folio": "S-003",
+            "fecha": "2026-02-12",
+            "url_md": "../cotizaciones/s003.md",
+            "estado": "pendiente"
+        },
+        {
             "id": "d001",
             "cliente": {
                 "client_slug": "grupo-publicitario",

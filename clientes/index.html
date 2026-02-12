@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klef Agency - Clientes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "vbyv8w37of");
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            background-color: white;
+            padding: 30px 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .page-title {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Content */
+        .content {
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h1 {
+            font-size: 28px;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        /* Grid de clientes */
+        .clientes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .cliente-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .cliente-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .cliente-card h3 {
+            margin-bottom: 10px;
+            color: #1a1a1a;
+            font-size: 18px;
+        }
+
+        .cliente-card .slug-id {
+            font-size: 12px;
+            color: #9b9b9b;
+            margin-bottom: 8px;
+            font-family: monospace;
+        }
+
+        .cliente-card .contact-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .cliente-card .contact-email {
+            font-size: 14px;
+            color: #0066cc;
+        }
+
+        .cliente-card .btn {
+            margin-top: 15px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .clientes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="https://ivanndlezz.github.io/klef-sonatta-website/assets/images/favicons/klef-logo.png"
+                        alt="Klef Agency Logo">
+                </div>
+                <div class="logo-text">Klef Agency</div>
+            </div>
+            <div class="page-title">Sistema de Clientes</div>
+        </div>
+
+        <!-- Content -->
+        <div id="content" class="content">
+            <p>Cargando clientes...</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Klef Agency - Sistema de Gestión de Clientes</p>
+        </div>
+    </div>
+
+    <script type="module">
+        import { getSlugParam } from '../js/url-parser.js';
+        import { findClientBySlug } from '../js/utils.js';
+
+        async function init() {
+            const container = document.getElementById('content');
+            const slugId = getSlugParam();
+
+            if (slugId) {
+                // Mostrar detalle de cliente
+                await showClienteDetail(slugId, container);
+            } else {
+                // Mostrar lista de clientes
+                await showClientesList(container);
+            }
+        }
+
+        async function showClientesList(container) {
+            const clientesData = await fetch('../data/clientes.json').then(res => res.json());
+
+            let html = `
+                <h1>Clientes Klef Agency</h1>
+                <div class="clientes-grid">
+            `;
+
+            for (const cliente of clientesData.clientes) {
+                html += `
+                    <div class="cliente-card" onclick="window.location.href='?slug=${cliente['slug-id']}'">
+                        <h3>${cliente.nombre}</h3>
+                        <p class="slug-id">${cliente['slug-id']}</p>
+                        <a href="?slug=${cliente['slug-id']}" class="btn" style="background: #6b6b6b; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; display: inline-block; margin-top: 15px;">Ver Detalle</a>
+                    </div>
+                `;
+            }
+
+            html += `
+                </div>
+                <p style="margin-top: 30px; color: #666;">Total de clientes: ${clientesData.clientes.length}</p>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        async function showClienteDetail(slugId, container) {
+            const clientesData = await fetch('../data/clientes.json').then(res => res.json());
+            const cliente = clientesData.clientes.find(c => c['slug-id'] === slugId);
+
+            if (!cliente) {
+                container.innerHTML = `
+                    <h1>Cliente no encontrado</h1>
+                    <p>No se encontró el cliente: ${slugId}</p>
+                    <a href="index.html" class="btn" style="background: #6b6b6b; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; display: inline-block;">← Volver a Clientes</a>
+                `;
+                return;
+            }
+
+            let html = `
+                <h1>${cliente.nombre}</h1>
+                <p style="color: #9b9b9b; font-family: monospace; margin-bottom: 30px;">${cliente['slug-id']}</p>
+
+                <div style="margin-bottom: 30px;">
+                    <h2 style="font-size: 18px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;">Información</h2>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr>
+                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; background: #f8f9fa; width: 150px;">ID</th>
+                            <td style="padding: 12px 15px; border-bottom: 1px solid #e0e0e0;">${cliente.id}</td>
+                        </tr>
+                        <tr>
+                            <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; background: #f8f9fa;">Slug-ID</th>
+                            <td style="padding: 12px 15px; border-bottom: 1px solid #e0e0e0; font-family: monospace;">${cliente['slug-id']}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <a href="index.html" class="btn" style="background: #6b6b6b; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; display: inline-block;">← Volver a Clientes</a>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        // Initialize
+        init();
+    </script>
+</body>
+
+</html>

@@ -9,7 +9,6 @@ import { formatDate } from './date-formatter.js';
 import {
     findCotizacionById,
     findClientBySlug,
-    getMainContact,
     showError,
     showLoading,
     showHelp
@@ -60,7 +59,6 @@ async function loadCotizacion(quoteId) {
 
     // Find the client
     const cliente = findClientBySlug(cotizacion.cliente.client_slug, clientesData.clientes);
-    const contacto = cliente ? getMainContact(cliente) : null;
 
     // Fetch the markdown file
     const markdownResponse = await fetch(cotizacion.url_md);
@@ -70,7 +68,7 @@ async function loadCotizacion(quoteId) {
     const markdownContent = await markdownResponse.text();
 
     // Populate header and render content
-    populateHeader(cotizacion, cliente, contacto);
+    populateHeader(cotizacion, cliente);
     renderContent(cotizacion, markdownContent);
 }
 
@@ -78,9 +76,8 @@ async function loadCotizacion(quoteId) {
  * Populate the header with quote and client information
  * @param {Object} cotizacion - Quote data
  * @param {Object} cliente - Client data
- * @param {Object} contacto - Contact data
  */
-function populateHeader(cotizacion, cliente, contacto) {
+function populateHeader(cotizacion, cliente) {
     // Populate folio
     const folioDisplay = document.getElementById('quote-folio-display');
     if (folioDisplay) {
@@ -97,12 +94,6 @@ function populateHeader(cotizacion, cliente, contacto) {
     const clientNameDisplay = document.getElementById('client-name');
     if (clientNameDisplay && cliente) {
         clientNameDisplay.textContent = cliente.nombre;
-    }
-
-    // Populate client contact
-    const clientContactDisplay = document.getElementById('client-contact');
-    if (clientContactDisplay && contacto) {
-        clientContactDisplay.textContent = contacto.nombre;
     }
 }
 
