@@ -71,6 +71,18 @@
             "fecha": "2026-02-15",
             "url_md": "../cotizaciones/b001.md",
             "estado": "pendiente"
+        },
+        {
+            "id": "b002",
+            "cliente": {
+                "client_slug": "jb-pools",
+                "client_contact": "jose-blancarte"
+            },
+            "tipo": "branding",
+            "folio": "B-002",
+            "fecha": "2026-04-01",
+            "url_md": "../cotizaciones/b002.md",
+            "estado": "pendiente"
         }
     ]
 }
