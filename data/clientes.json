@@ -19,6 +19,11 @@
             "id": "4",
             "slug-id": "lome-beauty",
             "nombre": "Lome Beauty"
+        },
+        {
+            "id": "5",
+            "slug-id": "jb-pools",
+            "nombre": "JB Pools"
         }
     ]
 }
