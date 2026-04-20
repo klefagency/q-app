@@ -618,6 +618,65 @@
         .btn-secondary:hover {
             background: #7a7a7a;
         }
+
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                padding: 0;
+                margin: 0;
+            }
+
+            * {
+                box-shadow: none !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .header-container {
+                max-width: 800px; /* Mantener ancho estándar */
+                margin: 0 auto;
+                box-shadow: none;
+                border: 1px solid #e0e0e0;
+            }
+
+            .header {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: stretch !important;
+            }
+
+            .right-section {
+                display: flex !important;
+                flex-direction: row !important;
+                background-color: #e8e8e8 !important;
+            }
+
+            .info-column {
+                min-width: 180px !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+
+            .info-column.folio {
+                background-color: #6b6b6b !important;
+            }
+
+            .info-column.fecha {
+                background-color: #9b9b9b !important;
+            }
+
+            .cotizacion-content {
+                max-width: 800px;
+                margin: 0 auto;
+                box-shadow: none;
+                padding: 40px;
+            }
+
+            .btn, button, .clientes-actions {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 

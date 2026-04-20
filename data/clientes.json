@@ -1,29 +1,37 @@
 {
-    "clientes": [
+  "clientes": [
+    {
+      "id": "1",
+      "slug-id": "cumbretezal",
+      "nombre": "Cumbre del Tezal"
+    },
+    {
+      "id": "2",
+      "slug-id": "grupo-publicitario",
+      "nombre": "Grupo Publicitario"
+    },
+    {
+      "id": "3",
+      "slug-id": "hana-tao",
+      "nombre": "Hana Tao"
+    },
+    {
+      "id": "4",
+      "slug-id": "lome-beauty",
+      "nombre": "Lome Beauty"
+    },
+    {
+      "id": "5",
+      "slug-id": "kitchen-valenzuela",
+      "nombre": "Kitchen Valenzuela",
+      "contactos": [
         {
-            "id": "1",
-            "slug-id": "cumbretezal",
-            "nombre": "Cumbre del Tezal"
-        },
-        {
-            "id": "2",
-            "slug-id": "grupo-publicitario",
-            "nombre": "Grupo Publicitario"
-        },
-        {
-            "id": "3",
-            "slug-id": "hana-tao",
-            "nombre": "Hana Tao"
-        },
-        {
-            "id": "4",
-            "slug-id": "lome-beauty",
-            "nombre": "Lome Beauty"
-        },
-        {
-            "id": "5",
-            "slug-id": "jb-pools",
-            "nombre": "JB Pools"
+          "nombre": "Aisha y Rubén Valenzuela",
+          "email": "contacto@kitchencleanvalenzuela.net",
+          "telefono": "N/A",
+          "is-main": true
         }
-    ]
+      ]
+    }
+  ]
 }

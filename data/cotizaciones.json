@@ -83,6 +83,30 @@
             "fecha": "2026-04-02",
             "url_md": "../cotizaciones/b002.md",
             "estado": "pendiente"
+        },
+        {
+            "id": "d002",
+            "cliente": {
+                "client_slug": "kitchen-valenzuela",
+                "client_contact": "main"
+            },
+            "tipo": "devs",
+            "folio": "D-002",
+            "fecha": "2026-03-10",
+            "url_md": "../cotizaciones/d002.md",
+            "estado": "pendiente"
+        },
+        {
+            "id": "d003",
+            "cliente": {
+                "client_slug": "kitchen-valenzuela",
+                "client_contact": "main"
+            },
+            "tipo": "devs",
+            "folio": "D-003",
+            "fecha": "2026-03-14",
+            "url_md": "../cotizaciones/d003.md",
+            "estado": "pendiente"
         }
     ]
 }
