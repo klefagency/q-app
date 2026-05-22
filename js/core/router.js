@@ -6,6 +6,8 @@
  * #/search               -> screen: 'search'
  * #/directorio/:tipo     -> screen: 'list', options: { tipo }
  * #/cotizacion/:id       -> screen: 'quote', options: { id }
+ * #/nueva                -> screen: 'create', options: {}
+ * #/conciliar            -> screen: 'reconcile', options: {}
  * empty or invalid       -> defaults to 'search'
  */
 
@@ -40,6 +42,14 @@ export function parseHash() {
     
     if (segments[0] === 'cotizacion' && segments[1]) {
         return { screen: 'quote', options: { id: segments[1] } };
+    }
+
+    if (segments[0] === 'nueva') {
+        return { screen: 'create', options: {} };
+    }
+
+    if (segments[0] === 'conciliar') {
+        return { screen: 'reconcile', options: {} };
     }
 
     // Default

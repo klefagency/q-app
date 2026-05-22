@@ -6,7 +6,7 @@ import { hydrate } from "./hydrator.js";
  * Manages the global state and triggers re-renders on the hydrator
  */
 export const state = {
-    screen: 'search', // 'search', 'list', 'quote'
+    screen: 'search', // 'search', 'list', 'quote', 'create', 'reconcile'
     options: {
         tipo: 'todas',
         id: null

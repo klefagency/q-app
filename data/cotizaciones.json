@@ -107,6 +107,18 @@
             "fecha": "2026-03-14",
             "url_md": "../cotizaciones/d003.md",
             "estado": "pendiente"
+        },
+        {
+            "id": "d004",
+            "cliente": {
+                "client_slug": "vasana-private-security-services",
+                "client_contact": "andres-lopez"
+            },
+            "tipo": "devs",
+            "folio": "D-004",
+            "fecha": "2026-05-22",
+            "url_md": "../cotizaciones/d004.md",
+            "estado": "pendiente"
         }
     ]
 }

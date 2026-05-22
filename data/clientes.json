@@ -3,7 +3,18 @@
     {
       "id": "1",
       "slug-id": "cumbretezal",
-      "nombre": "Cumbre del Tezal"
+      "nombre": "Cumbre del Tezal",
+      "contactos": [
+        {
+          "nombre": "Contacto principal",
+          "slug": "main",
+          "is-main": true
+        },
+        {
+          "nombre": "Rubén Flores",
+          "slug": "ruben-flores"
+        }
+      ]
     },
     {
       "id": "2",
@@ -27,11 +38,39 @@
       "contactos": [
         {
           "nombre": "Aisha y Rubén Valenzuela",
+          "slug": "main",
           "email": "contacto@kitchencleanvalenzuela.net",
           "telefono": "N/A",
           "is-main": true
         }
       ]
+    },
+    {
+      "id": "6",
+      "slug-id": "jb-pools",
+      "nombre": "JB Pools",
+      "contactos": [
+        {
+          "nombre": "Contacto principal",
+          "slug": "main",
+          "is-main": true
+        },
+        {
+          "nombre": "José Blancarte",
+          "slug": "jose-blancarte"
+        }
+      ]
+    },
+    {
+      "slug-id": "vasana-private-security-services",
+      "nombre": "Vasana Private Security Services",
+      "contactos": [
+        {
+          "nombre": "Andrés Lopez",
+          "slug": "andres-lopez"
+        }
+      ],
+      "id": "7"
     }
   ]
 }

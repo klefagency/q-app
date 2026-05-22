@@ -1,0 +1,14 @@
+{
+  "clientes_extra": [
+    {
+      "slug-id": "vasana-private-security-services",
+      "nombre": "Vasana Private Security Services",
+      "contactos": [
+        {
+          "nombre": "Andrés Lopez",
+          "slug": "andres-lopez"
+        }
+      ]
+    }
+  ]
+}
