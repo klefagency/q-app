@@ -143,6 +143,18 @@
             "fecha": "2026-08-30",
             "url_md": "../cotizaciones/b003.md",
             "estado": "pendiente"
+        },
+        {
+            "id": "b004",
+            "cliente": {
+                "client_slug": "la-chula",
+                "client_contact": "irasema-canedo"
+            },
+            "tipo": "branding",
+            "folio": "B-004",
+            "fecha": "2026-08-30",
+            "url_md": "../cotizaciones/b004.md",
+            "estado": "pendiente"
         }
     ]
 }

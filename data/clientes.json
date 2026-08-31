@@ -89,6 +89,19 @@
           "is-main": true
         }
       ]
+    },
+    {
+      "id": "9",
+      "slug-id": "la-chula",
+      "nombre": "La Chula",
+      "contactos": [
+        {
+          "nombre": "Irasema Cañedo",
+          "slug": "irasema-canedo",
+          "email": "irasema.makk33@gmail.com",
+          "is-main": true
+        }
+      ]
     }
   ]
 }
