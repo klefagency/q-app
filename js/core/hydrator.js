@@ -37,6 +37,7 @@ import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.mi
 mermaid.initialize({ startOnLoad: false, theme: "default" });
 
 const container = document.getElementById("app");
+const globalNav = document.getElementById("global-pos-nav");
 const navItems = document.querySelectorAll(".nav-item");
 
 export async function hydrate(state) {
@@ -65,6 +66,10 @@ export async function hydrate(state) {
 }
 
 function _updateNavActiveState(state) {
+    const isQuoteView = state.screen === 'quote';
+    globalNav?.classList.toggle('is-hidden', isQuoteView);
+    document.body.classList.toggle('quote-view', isQuoteView);
+
     navItems.forEach(item => {
         item.classList.remove('active', 'selected');
         const href = item.getAttribute('href');

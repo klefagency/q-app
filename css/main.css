@@ -91,6 +91,14 @@ body {
   z-index: 1000;
 }
 
+.pos-nav.is-hidden {
+  display: none;
+}
+
+body.quote-view {
+  padding-bottom: 20px;
+}
+
 .nav-logo {
   display: flex;
   align-items: center;
