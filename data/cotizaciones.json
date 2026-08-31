@@ -119,6 +119,30 @@
             "fecha": "2026-05-22",
             "url_md": "../cotizaciones/d004.md",
             "estado": "pendiente"
+        },
+        {
+            "id": "s004",
+            "cliente": {
+                "client_slug": "cumbretezal",
+                "client_contact": "melissa-montes"
+            },
+            "tipo": "studio",
+            "folio": "S-004",
+            "fecha": "2026-07-13",
+            "url_md": "../cotizaciones/s004.md",
+            "estado": "pendiente"
+        },
+        {
+            "id": "b003",
+            "cliente": {
+                "client_slug": "copisa-cabo",
+                "client_contact": "bibiana-bracho"
+            },
+            "tipo": "branding",
+            "folio": "B-003",
+            "fecha": "2026-08-30",
+            "url_md": "../cotizaciones/b003.md",
+            "estado": "pendiente"
         }
     ]
 }

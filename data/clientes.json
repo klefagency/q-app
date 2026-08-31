@@ -13,6 +13,10 @@
         {
           "nombre": "Rubén Flores",
           "slug": "ruben-flores"
+        },
+        {
+          "nombre": "Melissa Montes",
+          "slug": "melissa-montes"
         }
       ]
     },
@@ -71,6 +75,20 @@
         }
       ],
       "id": "7"
+    },
+    {
+      "id": "8",
+      "slug-id": "copisa-cabo",
+      "nombre": "Copiadoras y Servicios de los Cabos",
+      "contactos": [
+        {
+          "nombre": "Bibiana Bracho",
+          "slug": "bibiana-bracho",
+          "email": "bibiana.bracho@copisapv.com",
+          "telefono": "624 141 6984 / 624 247 3834",
+          "is-main": true
+        }
+      ]
     }
   ]
 }

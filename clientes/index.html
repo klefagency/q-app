@@ -191,7 +191,6 @@
 
     <script type="module">
         import { getSlugParam } from '../js/url-parser.js';
-        import { findClientBySlug } from '../js/utils.js';
 
         async function init() {
             const container = document.getElementById('content');
@@ -215,10 +214,15 @@
             `;
 
             for (const cliente of clientesData.clientes) {
+                const contacto = cliente.contactos?.find(c => c['is-main']) || cliente.contactos?.[0];
                 html += `
                     <div class="cliente-card" onclick="window.location.href='?slug=${cliente['slug-id']}'">
                         <h3>${cliente.nombre}</h3>
                         <p class="slug-id">${cliente['slug-id']}</p>
+                        ${contacto ? `
+                            <p class="contact-name">${contacto.nombre}</p>
+                            ${contacto.email ? `<p class="contact-email">${contacto.email}</p>` : ''}
+                        ` : ''}
                         <a href="?slug=${cliente['slug-id']}" class="btn" style="background: #6b6b6b; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; display: inline-block; margin-top: 15px;">Ver Detalle</a>
                     </div>
                 `;
@@ -263,10 +267,34 @@
                     </table>
                 </div>
 
+                <div style="margin-bottom: 30px;">
+                    <h2 style="font-size: 18px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;">Contactos</h2>
+                    ${renderContactos(cliente.contactos)}
+                </div>
+
                 <a href="index.html" class="btn" style="background: #6b6b6b; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; display: inline-block;">← Volver a Clientes</a>
             `;
 
             container.innerHTML = html;
+        }
+
+        function renderContactos(contactos = []) {
+            if (!contactos.length) {
+                return '<p style="color: #666;">Sin contactos registrados.</p>';
+            }
+
+            return `
+                <ul style="list-style: none; display: grid; gap: 12px;">
+                    ${contactos.map(contacto => `
+                        <li style="padding: 15px; background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 8px;">
+                            <strong>${contacto.nombre}</strong>
+                            ${contacto['is-main'] ? '<span style="margin-left: 8px; color: #666;">Principal</span>' : ''}
+                            ${contacto.email ? `<br>Email: <a href="mailto:${contacto.email}">${contacto.email}</a>` : ''}
+                            ${contacto.telefono ? `<br>Teléfono: ${contacto.telefono}` : ''}
+                        </li>
+                    `).join('')}
+                </ul>
+            `;
         }
 
         // Initialize
