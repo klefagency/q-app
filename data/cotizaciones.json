@@ -155,6 +155,18 @@
             "fecha": "2026-08-30",
             "url_md": "../cotizaciones/b004.md",
             "estado": "pendiente"
+        },
+        {
+            "id": "d005",
+            "cliente": {
+                "client_slug": "copisa-cabo",
+                "client_contact": "bibiana-bracho"
+            },
+            "tipo": "devs",
+            "folio": "D-005",
+            "fecha": "2026-08-30",
+            "url_md": "../cotizaciones/d005.md",
+            "estado": "pendiente"
         }
     ]
 }
