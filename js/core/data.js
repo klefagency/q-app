@@ -43,9 +43,10 @@ export async function fetchData() {
     }
 
     try {
+        const t = Date.now();
         const [cotsRes, clisRes] = await Promise.all([
-            fetch("../data/cotizaciones.json"),
-            fetch("../data/clientes.json")
+            fetch(`../data/cotizaciones.json?t=${t}`, { cache: "no-cache" }),
+            fetch(`../data/clientes.json?t=${t}`, { cache: "no-cache" })
         ]);
 
         if (!cotsRes.ok || !clisRes.ok) throw new Error("Could not fetch data files");
@@ -95,7 +96,8 @@ export async function loadMarkdown(url, quote) {
         if (!md) throw new Error("Markdown local no encontrado");
         return md;
     }
-    const res = await fetch(url);
+    const t = Date.now();
+    const res = await fetch(`${url}?t=${t}`, { cache: "no-cache" });
     if (!res.ok) throw new Error("Markdown not found");
     return await res.text();
 }

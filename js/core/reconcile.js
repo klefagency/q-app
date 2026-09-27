@@ -16,7 +16,7 @@ export const STATUS_LABELS = {
 
 async function fileExists(url) {
     try {
-        const res = await fetch(url);
+        const res = await fetch(`${url}?t=${Date.now()}`, { cache: "no-cache" });
         return res.ok;
     } catch {
         return false;
@@ -36,14 +36,14 @@ export function quoteToJsonEntry(quote) {
 }
 
 export async function fetchJsonCotizaciones() {
-    const res = await fetch(PATHS.cotizacionesJsonFetch);
+    const res = await fetch(`${PATHS.cotizacionesJsonFetch}?t=${Date.now()}`, { cache: "no-cache" });
     if (!res.ok) throw new Error("No se pudo leer data/cotizaciones.json");
     const data = await res.json();
     return data.cotizaciones || [];
 }
 
 export async function fetchJsonClientes() {
-    const res = await fetch(PATHS.clientesJsonFetch);
+    const res = await fetch(`${PATHS.clientesJsonFetch}?t=${Date.now()}`, { cache: "no-cache" });
     if (!res.ok) throw new Error("No se pudo leer data/clientes.json");
     const data = await res.json();
     return data.clientes || [];
