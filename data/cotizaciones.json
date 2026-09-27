@@ -167,6 +167,18 @@
             "fecha": "2026-08-30",
             "url_md": "../cotizaciones/d005.md",
             "estado": "pendiente"
+        },
+        {
+            "id": "d006",
+            "cliente": {
+                "client_slug": "do-it-at",
+                "client_contact": "diego-hernandez"
+            },
+            "tipo": "devs",
+            "folio": "D-006",
+            "fecha": "2026-09-26",
+            "url_md": "../cotizaciones/d006.md",
+            "estado": "pendiente"
         }
     ]
 }
