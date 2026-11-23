@@ -115,6 +115,18 @@
           "is-main": true
         }
       ]
+    },
+    {
+      "id": "11",
+      "slug-id": "the-barber-studio",
+      "nombre": "The Barber Studio",
+      "contactos": [
+        {
+          "nombre": "Félix",
+          "slug": "felix",
+          "is-main": true
+        }
+      ]
     }
   ]
 }
