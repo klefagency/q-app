@@ -179,6 +179,18 @@
             "fecha": "2026-09-26",
             "url_md": "../cotizaciones/d006.md",
             "estado": "pendiente"
+        },
+        {
+            "id": "m002",
+            "cliente": {
+                "client_slug": "the-barber-studio",
+                "client_contact": "felix"
+            },
+            "tipo": "marketing",
+            "folio": "M-002",
+            "fecha": "2026-11-23",
+            "url_md": "../cotizaciones/m002.md",
+            "estado": "pendiente"
         }
     ]
 }
