@@ -1291,6 +1291,9 @@ body.quote-view {
   color: #666;
   font-size: 14px;
 }
+.print-running-footer {
+  display: none;
+}
 
 /* Error Message */
 .error-message {
@@ -1372,7 +1375,17 @@ body.quote-view {
 @media print {
   @page {
     size: Letter;
-    margin: 12mm 14mm 15mm;
+    margin: 10mm 10mm 13mm;
+    @bottom-left {
+      content: "Klef Agency · Cotización";
+      font-size: 8pt;
+      color: #777777;
+    }
+    @bottom-right {
+      content: "Página " counter(page) " de " counter(pages);
+      font-size: 8pt;
+      color: #777777;
+    }
   }
 
   html,
@@ -1394,13 +1407,21 @@ body.quote-view {
 
   .pos-nav,
   .page-header-actions,
-  .btn-nueva {
+  .btn-nueva,
+  .quote-header {
     display: none !important;
   }
 
-  .header-container {
-    width: 100%;
+  .header-container,
+  .cotizacion-content {
+    width: calc(100% - 14mm);
     max-width: none;
+    margin-left: 7mm;
+    margin-right: 7mm;
+  }
+
+  .header-container {
+    margin-top: 4mm;
     border: 0;
     border-bottom: 1px solid #d6d6d6;
     border-radius: 0;
@@ -1433,12 +1454,12 @@ body.quote-view {
   }
 
   .client-info h2 {
-    font-size: 16px;
+    font-size: 19px;
     margin-bottom: 3px;
   }
 
   .client-info p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .right-section {
@@ -1470,33 +1491,25 @@ body.quote-view {
   }
 
   .info-column.folio {
-    background-color: #6b6b6b !important;
+    background-color: #2f2f2f !important;
   }
 
   .info-column.fecha {
-    background-color: #9b9b9b !important;
+    background-color: #5a5a5a !important;
   }
 
   .cotizacion-content {
-    width: 100%;
-    max-width: none;
+    margin-top: 0;
     margin-bottom: 0;
-    padding: 18px 6mm 0;
+    padding: 18px 0 0;
     border: 0;
     border-radius: 0;
-  }
-
-  .quote-header {
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #d6d6d6;
-    page-break-after: avoid;
-    break-after: avoid-page;
   }
 
   .quote-content {
     font-size: 11pt;
     line-height: 1.5;
+    padding-bottom: 8mm;
   }
 
   .quote-content h1,
@@ -1511,6 +1524,11 @@ body.quote-view {
     margin-bottom: 14px;
     font-size: 21pt;
     line-height: 1.18;
+  }
+
+  .quote-content h1 + p,
+  .quote-content h1 + p + hr {
+    display: none !important;
   }
 
   .quote-content h2 {
@@ -1586,9 +1604,25 @@ body.quote-view {
   }
 
   .quote-footer {
-    margin-top: 24px;
+    margin-top: 28px;
     padding-top: 12px;
+    padding-bottom: 4mm;
     break-inside: avoid-page;
     page-break-inside: avoid;
+  }
+
+  .print-running-footer {
+    position: fixed;
+    right: 7mm;
+    bottom: 4mm;
+    left: 7mm;
+    display: flex !important;
+    justify-content: space-between;
+    padding-top: 2mm;
+    border-top: 1px solid #d6d6d6;
+    color: #777777;
+    font-size: 8pt;
+    line-height: 1.2;
+    background: #ffffff;
   }
 }

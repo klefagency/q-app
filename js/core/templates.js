@@ -138,6 +138,10 @@ export const templates = {
                 <p>Klef Agency - Sistema de Cotizaciones</p>
             </div>
         </div>
+        <div class="print-running-footer" aria-hidden="true">
+            <span>Klef Agency</span>
+            <span>${quote.folio}</span>
+        </div>
     `,
 
   customSelect: (id, placeholder, optionsHtml) => `
