@@ -1370,50 +1370,166 @@ body.quote-view {
 }
 
 @media print {
+  @page {
+    size: Letter;
+    margin: 14mm 16mm;
+  }
+
+  html {
+    background: #ffffff !important;
+  }
+
   body {
     background-color: #ffffff !important;
     padding: 0;
     margin: 0;
+    color: #1d1d1f;
   }
+
   * {
     box-shadow: none !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
+
+  .pos-nav,
+  .page-header-actions,
+  .btn-nueva {
+    display: none !important;
+  }
+
   .header-container {
     max-width: 100%;
     border: 1px solid #e0e0e0;
     border-radius: 0;
+    page-break-after: avoid;
+    break-after: avoid-page;
   }
+
   .header-doc {
     display: flex !important;
     flex-direction: row !important;
   }
+
   .right-section {
     display: flex !important;
     flex-direction: row !important;
     background-color: #e8e8e8 !important;
   }
+
   .info-column {
     min-width: 180px !important;
     display: flex !important;
     flex-direction: column !important;
   }
+
   .info-column.folio {
     background-color: #6b6b6b !important;
   }
+
   .info-column.fecha {
     background-color: #9b9b9b !important;
   }
+
   .cotizacion-content {
     max-width: 100%;
+    width: 100%;
     border-radius: 0;
     margin-bottom: 0;
-    padding: 20px;
-    border: 1px solid #e0e0e0;
+    padding: 16px 0 0;
+    border: 0;
     border-top: none;
   }
-  .pos-nav {
-    display: none !important;
+
+  .quote-header {
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+  }
+
+  .quote-content {
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+
+  .quote-content h1 {
+    font-size: 22pt;
+    line-height: 1.15;
+    margin-bottom: 14px;
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+
+  .quote-content h2 {
+    font-size: 16pt;
+    line-height: 1.2;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+
+  .quote-content h3 {
+    font-size: 13pt;
+    line-height: 1.2;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+
+  .quote-content p {
+    margin-bottom: 9px;
+    orphans: 3;
+    widows: 3;
+  }
+
+  .quote-content ul,
+  .quote-content ol {
+    margin-bottom: 10px;
+    padding-left: 22px;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .quote-content li {
+    margin-bottom: 4px;
+    orphans: 2;
+    widows: 2;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .quote-content table {
+    margin: 12px 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .quote-content th,
+  .quote-content td {
+    padding: 8px 10px;
+  }
+
+  .quote-content thead {
+    display: table-header-group;
+  }
+
+  .quote-content tr {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .quote-content a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .quote-footer {
+    margin-top: 18px;
+    padding-top: 10px;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
   }
 }
