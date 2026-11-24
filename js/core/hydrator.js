@@ -39,6 +39,13 @@ mermaid.initialize({ startOnLoad: false, theme: "default" });
 const container = document.getElementById("app");
 const globalNav = document.getElementById("global-pos-nav");
 const navItems = document.querySelectorAll(".nav-item");
+const DEFAULT_DOCUMENT_TITLE = "Klef Agency - Cotizaciones (SPA)";
+const QUOTE_TYPE_LABELS = {
+    devs: "Desarrollo Web",
+    branding: "Branding",
+    studio: "Producción Audiovisual",
+    marketing: "Marketing"
+};
 
 export async function hydrate(state) {
     container.setAttribute("data-status", "skel");
@@ -70,6 +77,10 @@ function _updateNavActiveState(state) {
     globalNav?.classList.toggle('is-hidden', isQuoteView);
     document.body.classList.toggle('quote-view', isQuoteView);
 
+    if (!isQuoteView) {
+        document.title = DEFAULT_DOCUMENT_TITLE;
+    }
+
     navItems.forEach(item => {
         item.classList.remove('active', 'selected');
         const href = item.getAttribute('href');
@@ -86,6 +97,28 @@ function _updateNavActiveState(state) {
             }
         }
     });
+}
+
+function _safeTitlePart(value) {
+    return String(value ?? "")
+        .replace(/[\\/:*?"<>|]+/g, "-")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+function _setQuoteDocumentTitle(quote, clientName) {
+    const typeLabel = QUOTE_TYPE_LABELS[quote.tipo] || quote.tipo || "Cotización";
+    const parts = [
+        quote.folio,
+        clientName,
+        typeLabel,
+        quote.fecha,
+        "Klef Agency"
+    ]
+        .map(_safeTitlePart)
+        .filter(Boolean);
+
+    document.title = parts.join(" - ");
 }
 
 async function _renderSearch() {
@@ -506,6 +539,7 @@ async function _renderQuote(id) {
     const cache = await fetchData();
     const client = findClient(quote.cliente.client_slug);
     const clientName = client ? client.nombre : quote.cliente.client_slug;
+    _setQuoteDocumentTitle(quote, clientName);
     const contactName = resolveContactDisplayName(
         cache.clientes,
         quote.cliente.client_slug,
